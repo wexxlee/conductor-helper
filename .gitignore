@@ -1,0 +1,7 @@
+.vs
+**/*.suo
+bin/
+dist/
+obj/
+packages/
+user/
