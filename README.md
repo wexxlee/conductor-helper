@@ -14,7 +14,7 @@ To use this tool, you must have installed [XIVLauncher](https://goatcorp.github.
 
 ## Basic How-To
 
-1. [Open Conductor Helper](https://)
+1. [Open Conductor Helper](https://wexxlee.github.io/conductor-helper/)
 2. Enter a train name, and select the scouting site you are using.
 3. Paste the scouting report (see [below](#exporting-scouting-reports))
 4. Click 'Output Macro'
