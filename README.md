@@ -1,6 +1,6 @@
 # FFXIV Hunt Trains - Conductor Helper
 
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/wexxlee/conductor-helper?color=brightgreen&sort=semver)](https://github.com/wexxlee/conductor-helper/releases/latest)
+![GitHub Release](https://img.shields.io/github/v/release/wexxlee/conductor-helper)
 
 A quick and simple tool for FFXIV hunt train conductors to get their flags ready for an upcoming train. 
 It will take text scouting reports/summaries from [BearTracker](https://aetherhunt.beartoolkit.com/train), 
