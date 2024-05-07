@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+    <meta charset="utf-8" />
+    <title>Set Hunt Train Flags</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+    <div id="titlebanner">FFXIV Hunt Conductor Helper</div>
+    <br />
+    <div id="info">
+        <a href="https://github.com/wexxlee/conductor-helper/blob/main/README.md">Read Me/Instructions</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+        <a href="https://github.com/wexxlee/conductor-helper/issues">Report Issues &amp; Request Features</a>
+    </div>
+    <table>
+        <tr>
+            <td>
+                <fieldset>
+                    <legend>Train Name:</legend>
+                    <div>
+                        <input type="text" id="trainName" placeholder="My Train" />
+                    </div>
+                </fieldset>
+                <br />
+                <fieldset>
+                    <legend>Train Scouting Tool:</legend>
+                    <div>
+                        <input type="radio" id="siren" name="tool" value="siren" />
+                        <label for="siren">Siren Hunts</label>
+                        <input type="radio" id="prime" name="tool" value="prime" />
+                        <label for="prime">Prime Hunts</label>
+                        <input type="radio" id="bear" name="tool" value="bear" />
+                        <label for="bear">Bear Tracker</label>
+                    </div>
+                </fieldset>
+                <br />
+                <fieldset>
+                    <legend>Scouting Report</legend>
+                    <div>
+                        <textarea id="marks"></textarea>
+                        <label for="marks"></label>
+                    </div>
+                </fieldset>
+                <br />
+                <div id="buttons">
+                    <input id="showBtn" type="button" value="Show Macro" onclick="generateMacro()" />
+                </div>
+            </td>
+            <td class="max">
+                <div class="outputbar" id="errorHeader">Errors</div>
+                <div id="errorText"> </div>
+                <br />
+                <div class="outputbar" id="macroHeader">Macro</div>
+                <div id="macroText" style="color:darkgreen; font-size: larger"> </div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
