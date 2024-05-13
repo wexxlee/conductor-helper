@@ -37,7 +37,7 @@ function generateMacro() {
         if (mark.length < 3) // probably a newline
             continue;
         if (scoutSrc === 'prime') { // needs special handling
-            const zoneTestRegex = /^(?<zone>[\w ]+)$/;
+            const zoneTestRegex = /^(?<zone>[\w\'\- ]+)$/;
             const zoneTestMatch = mark.match(zoneTestRegex);
             if (zoneTestMatch) {
                 zoneName = zoneTestMatch.groups.zone;
