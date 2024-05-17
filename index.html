@@ -37,6 +37,16 @@
                 </fieldset>
                 <br />
                 <fieldset>
+                    <legend>Options</legend>
+                    <div>
+                        <input type="checkbox" id="includeZoneName" />
+                        <label for="includeZoneName">Add zone name headers to macro</label>
+                        <br />
+                        <input type="checkbox" id="includeMarkName" />
+                        <label for="includeMarkName">Add mark names to macro</label>
+                    </div>
+                </fieldset>
+                <fieldset>
                     <legend>Scouting Report</legend>
                     <div>
                         <textarea id="marks"></textarea>
@@ -52,8 +62,8 @@
                 <div class="outputbar" id="errorHeader">Errors</div>
                 <div id="errorText"> </div>
                 <br />
-                <div class="outputbar" id="macroHeader">Macro</div>
-                <div id="macroText" style="color:darkgreen; font-size: larger"> </div>
+                <div class="outputbar" id="macroHeader">Macros</div>
+                <div id="macroContainer"> </div>
             </td>
         </tr>
     </table>

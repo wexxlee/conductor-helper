@@ -104,9 +104,25 @@ div {
     font-weight: 800;
 }
 
-#macroText {
-    display: flex;
+#macroContainer {
     color: #148c3b;
-    font-size: 14px;
-    font-weight: 800;
+    font-size: 13px;
+    font-weight: 700;
 }
+
+.macroText {
+    position: relative;
+    margin-bottom: 20px;
+    padding: 10px;
+    padding-right: 70px;
+    border: 1px solid darkgreen;
+    display: table;
+    min-width: 400px;
+}
+
+.copyButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
