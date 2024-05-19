@@ -6,10 +6,10 @@ function generateMacro() {
     clearOutput();
 
     const regex = {
-        siren: /\(Maybe:\s*(?<mark>[^)]+)\)\s*.(?<zone>[\w ]+)\s*\(\s*(?<x>[0-9\.]+)\s*,\s*(?<y>[0-9\.]+)\s*\)/,
+        siren: /\(Maybe:\s*(?<mark>[^)]+)\)\s*.(?<zone>[\w\'\- ]+)\s*\(\s*(?<x>[0-9\.]+)\s*,\s*(?<y>[0-9\.]+)\s*\)/,
         prime: /(?<mark>[^(]+)\s+\((?<x>[0-9\.]+)\s*,\s*(?<y>[0-9\.]+)\s*\)/,
         primeZoneOnly: /^(?<zone>[\w\'\- ]+)$/,
-        bear: /(?<zone>[\w ]+)\s+\(\s*(?<x>[0-9\.]+)\s*,\s*(?<y>[0-9\.]+)\s*\)\s*(?<mark>[\w ]+)/,
+        bear: /(?<zone>[\w\'\- ]+)\s+\(\s*(?<x>[0-9\.]+)\s*,\s*(?<y>[0-9\.]+)\s*\)\s*(?<mark>[\w\'\- ]+)/,
     }
 
     const scoutSelect = document.querySelector('input[name="tool"]:checked');
