@@ -28,6 +28,14 @@ div {
     margin: 5px;
 }
 
+ul {
+    margin-top: 0;
+}
+
+input[type="checkbox"]:disabled + label {
+    color: lightgrey;
+}
+
 #titlebanner {
     width: 100%;
     background-color: blueviolet;
@@ -43,6 +51,39 @@ div {
     font-size: 16px;
     font-weight: 600;
     text-align: center;
+}
+
+#changelog {
+    border: 1px solid black;
+    padding: 5px;
+    min-width: 700px;
+    max-width: 45%;
+    margin: auto;
+    margin-bottom: 30px;
+    display: block;
+}
+
+#changelog-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D0D0D0;
+    font-weight: 800;
+    font-size: 20px;
+    color: black;
+}
+
+#changelog-contents {
+    font-size: 15px;
+    color: #333333;
+}
+
+#warn {
+    font-size: 12px;
+    font-weight: 300;
+    color: red;
+    text-align: left;
+    padding-left: 25px;
 }
 
 #trainName {

@@ -10,6 +10,19 @@
 <body>
     <div id="titlebanner">FFXIV Hunt Conductor Helper</div>
     <br />
+    <div id="changelog">
+        <div id="changelog-header">CHANGE LOG</div>
+        <div id="changelog-contents">
+            <img src="https://img.shields.io/github/v/release/wexxlee/conductor-helper" />
+            &nbsp;&nbsp;
+            <img src="https://img.shields.io/github/release-date/wexxlee/conductor-helper" />
+            <ul>
+                <li>Added option to echo mark names on the same chat line as the mark flag</li>
+                <li>Added option to customize the number of output lines per macro</li>
+            </ul>
+            </li>
+        </div>
+    </div>
     <div id="info">
         <a href="https://github.com/wexxlee/conductor-helper/blob/main/README.md">Read Me/Instructions</a>&nbsp;&nbsp;|&nbsp;&nbsp;
         <a href="https://github.com/wexxlee/conductor-helper/issues">Report Issues &amp; Request Features</a>
@@ -39,11 +52,30 @@
                 <fieldset>
                     <legend>Options</legend>
                     <div>
+                        <input type="checkbox" id="echoMarksAndFlags" />
+                        <label for="echoMarksAndFlags">Echo mark names with flags</label>
+                        <br />
+                        <div id="warn"><b>NOTE:</b> If you do not want duplicated flags,
+                        change ChatCoordinates' "General Chat Channel" to "Say" (or something else
+                        that doesn't show in your echo log.).</div>
+                        <br />
                         <input type="checkbox" id="includeZoneName" />
                         <label for="includeZoneName">Add zone name headers to macro</label>
                         <br />
                         <input type="checkbox" id="includeMarkName" />
-                        <label for="includeMarkName">Add mark names to macro</label>
+                        <label for="includeMarkName">Add mark name headers to macro</label>
+                        <br />
+                        <br />
+                        Lines per macro:
+                        <select id="linesPerMacro">
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15" selected>15</option>
+                        </select>
+                        <br />
+                        <small>(in case you want to add stuff before running it)</small>
                     </div>
                 </fieldset>
                 <fieldset>

@@ -2,8 +2,41 @@
 const _ECHO_PREFIX = '/e';
 const _MAX_LINES_PER_MACRO = 15;
 let lastClickedButton = null;
+
+window.onload = () => {
+    var warnDiv = document.getElementById('warn');
+
+    document.getElementById('echoMarksAndFlags').addEventListener('change', function() {
+        var isChecked = this.checked;
+        ['includeZoneName', 'includeMarkName'].forEach((id) => {
+            var checkbox = document.getElementById(id);
+            checkbox.disabled = isChecked;
+            if (isChecked)
+                checkbox.checked = false;
+        });
+    });
+
+    ['includeZoneName', 'includeMarkName'].forEach((id) => {
+        document.getElementById(id).addEventListener('change', function() {
+            var isOtherChecked = document.getElementById(id === 'includeZoneName' ? 'includeMarkName' : 'includeZoneName').checked;
+            var echoMarksAndFlags = document.getElementById('echoMarksAndFlags');
+            echoMarksAndFlags.disabled = this.checked || isOtherChecked;
+            if (this.checked || isOtherChecked) {
+                echoMarksAndFlags.disabled = true;
+                warnDiv.style.color = 'lightgrey';
+                echoMarksAndFlags.checked = false;
+            } else {
+                warnDiv.style.color = 'red';
+                echoMarksAndFlags.disabled = false;
+            }
+        });
+    });
+}
+
 function generateMacro() {
     clearOutput();
+
+    linesPerMacro = document.getElementById('linesPerMacro').value ?? _MAX_LINES_PER_MACRO;
 
     const regex = {
         siren: /\(Maybe:\s*(?<mark>[^)]+)\)\s*.(?<zone>[\w\'\- ]+)\s*\(\s*(?<x>[0-9\.]+)\s*,\s*(?<y>[0-9\.]+)\s*\)/,
@@ -29,6 +62,7 @@ function generateMacro() {
         return;
     }
 
+    const echoMarksAndFlags = document.getElementById('echoMarksAndFlags').checked;
     const includeZoneName = document.getElementById('includeZoneName').checked;
     const includeMarkName = document.getElementById('includeMarkName').checked;
 
@@ -104,6 +138,8 @@ function generateMacro() {
         zoneMarkCount++;
         zoneMarkNameCache.push(markName);
         zoneMarkCoordCache.push(`${_CMD_PREFIX} ${x} ${y} : ${zoneName}`);
+        if (echoMarksAndFlags)
+            zoneMarkCoordCache.push(`${_ECHO_PREFIX}  ${markName}  &lt;flag&gt;`);
     }
 
     // push the final zone's marks, since the loop has ended
@@ -142,14 +178,14 @@ function displayMacro(output) {
 function getFormattedMacro(output) {
     let brokenOutput = '';
     for (let i = 0; i < output.length; i++) {
-        if (i % _MAX_LINES_PER_MACRO === 0) {
+        if (i % linesPerMacro === 0) {
             if (i !== 0) {
                 brokenOutput += '</div>';
             }
             brokenOutput += `<div class="macroText"><button class="copyButton" onclick="copyToClipboard(this)">Copy to Clipboard</button>`;
         }
         brokenOutput += output[i];
-        if ((i + 1) % _MAX_LINES_PER_MACRO !== 0 || i !== output.length - 1)
+        if ((i + 1) % linesPerMacro !== 0 || i !== output.length - 1)
             brokenOutput += '<br />\n';
     }
     brokenOutput += '</div>';
