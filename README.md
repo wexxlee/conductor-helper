@@ -4,8 +4,8 @@
 
 A quick and simple tool for FFXIV hunt train conductors to get their flags ready for an upcoming train. 
 It will take text scouting reports/summaries from [BearTracker](https://aetherhunt.beartoolkit.com/train), 
-[SirenHunts](https://sirenhunts.com/scouting), or 
-[PrimeHunts](https://prime-hunt-tools.web.app/), and will properly format the output into an FFXIV macro
+[SirenHunts](https://sirenhunts.com/scouting), [PrimeHunts](https://prime-hunt-tools.web.app/), or
+[Turtle Scout](https://scout.wobbuffet.net/), and will properly format the output into an FFXIV macro
 that will output all of the marks as clickable flags in your echo log.
 
 To use this tool, you must have installed [XIVLauncher](https://goatcorp.github.io/) and enabled the [ChatCoordinates](https://github.com/kissorjeyabalan/dalamud-chatcoordinates) plugin.
@@ -47,7 +47,7 @@ Use the `Copy Scouts to Text Form` button to export the route directly to your c
 
 <img src="assets/siren_hunts2.png" width=350 />
 
-#### Prime Hunts
+#### Prime Hunts or Turtle Scout
 
 Use the `Summary` button, and manually copy the zone names and mark info from the side panel into the Conductor Helper form:
 

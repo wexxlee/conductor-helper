@@ -50,7 +50,8 @@ function generateMacro() {
         displayError('Must select scouting tool.');
         return;
     }
-    const scoutSrc = scoutSelect.value;
+    // Turtle uses the same export format as PrimeHunts
+    const scoutSrc = scoutSelect.value === 'turtle' ? 'prime' : scoutSelect.value;
     const scoutRegex = regex[scoutSrc];
     if (!scoutRegex) {
         displayError('Invalid scout source');
